@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledTable = styled.table`
   width: 100%;
+  margin-bottom: 2rem;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 0.5rem 0.5rem 0 0;
   overflow: hidden;
@@ -17,6 +18,21 @@ export const StyledTable = styled.table`
     th {
       text-align: left;
       padding: 1rem;
+    }
+  }
+  .expand-header {
+    display: none;
+    min-width: 0;
+    width: 4rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .other-header {
+      display: none;
+    }
+
+    .expand-header {
+      display: table-cell;
     }
   }
 `;
