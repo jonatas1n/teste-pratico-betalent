@@ -8,7 +8,7 @@ export const StyledTableRow = styled.div`
 
   td {
     padding: 1rem;
-    vertical-allign: middle;
+    vertical-align: middle;
   }
 
   td:first-child {
