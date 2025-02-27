@@ -1,3 +1,4 @@
+import { Container } from "../Container";
 import { Heading } from "../Heading";
 import { StyledError } from "./FetchError.styles";
 
@@ -6,8 +7,10 @@ const ERROR_TEXT =
 
 export const FetchError = () => {
   return (
-    <StyledError>
-      <Heading variant="h1" value={ERROR_TEXT} />
-    </StyledError>
+    <Container>
+      <StyledError>
+        <Heading variant="h1" value={ERROR_TEXT} />
+      </StyledError>
+    </Container>
   );
 };
