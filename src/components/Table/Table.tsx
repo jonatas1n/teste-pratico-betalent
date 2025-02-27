@@ -2,7 +2,7 @@ import { StyledTable } from "./Table.styles";
 import { Heading } from "../Heading";
 import { TableRow } from "../TableRow";
 import { Employee } from "../../types/employee";
-import { FaCircle } from "react-icons/fa";
+import { BsDot } from "react-icons/bs";
 
 type TableProps = {
   headers: string[];
@@ -20,7 +20,7 @@ export const Table = ({ headers, data }: TableProps) => {
             </th>
           ))}
           <th className="expand-header">
-            <FaCircle />
+            <BsDot />
           </th>
         </tr>
       </thead>
