@@ -1,10 +1,11 @@
-import { ReactNode } from "react";
 import { StyledTable } from "./Table.styles";
 import { Heading } from "../Heading";
+import { TableRow } from "../TableRow";
+import { Employee } from "../../types/employee";
 
 type TableProps = {
   headers: string[];
-  data: Array<Array<ReactNode>>;
+  data: Array<Employee>;
 };
 
 export const Table = ({ headers, data }: TableProps) => {
@@ -14,18 +15,14 @@ export const Table = ({ headers, data }: TableProps) => {
         <tr>
           {headers.map((header) => (
             <th>
-              <Heading variant="h2" value={header} />
+              <Heading variant="h2" key={header} value={header} />
             </th>
           ))}
         </tr>
       </thead>
       <tbody>
         {data.map((row) => (
-          <tr>
-            {row.map((column) => (
-              <td>{column}</td>
-            ))}
-          </tr>
+          <TableRow data={row} key={row.id} />
         ))}
       </tbody>
     </StyledTable>
