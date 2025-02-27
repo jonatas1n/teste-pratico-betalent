@@ -14,8 +14,8 @@ export const Table = ({ headers, data }: TableProps) => {
       <thead>
         <tr>
           {headers.map((header) => (
-            <th>
-              <Heading variant="h2" key={header} value={header} />
+            <th key={header}>
+              <Heading variant="h2" value={header} />
             </th>
           ))}
         </tr>
