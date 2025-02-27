@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledTableRow = styled.div<{ isOpen: boolean }>`
+export const StyledTableRow = styled.div`
   display: contents;
   tr {
     border-bottom: 1px solid ${({ theme }) => theme.colors.gray["10"]};
@@ -8,6 +8,7 @@ export const StyledTableRow = styled.div<{ isOpen: boolean }>`
 
   td {
     padding: 1rem;
+    vertical-allign: middle;
   }
 
   td:first-child {

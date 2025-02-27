@@ -15,7 +15,7 @@ export const TableRow = ({ data }: TableRowProps) => {
   const formattedPhone = formatPhone(data.phone);
 
   return (
-    <StyledTableRow isOpen={isOpen} onClick={toggleIsOpen}>
+    <StyledTableRow onClick={toggleIsOpen}>
       <tr>
         <td>
           <Avatar src={data.image} />
