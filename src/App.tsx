@@ -1,6 +1,10 @@
+import { Header } from "./components/Header";
+import { Container } from "./components/Container";
 import { TitleBar } from "./layouts/TitleBar/TitleBar";
 import { useState } from "react";
+import { Logo } from "./components/Logo";
 import { Grid } from "./components/Grid";
+import { ContentTable } from "./layouts/ContentTable/ContentTable";
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
@@ -21,6 +25,7 @@ function App() {
         searchValue={searchValue}
         setSearchValue={handleSearchChange}
       />
+      <ContentTable />
     </Grid>
   );
 }
