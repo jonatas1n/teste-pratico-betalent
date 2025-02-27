@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const StyledSearch = styled.div`
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  justify-content: space-betweeen;
+  justify-content: space-between;
   padding: .25rem .5rem;
   background-color: white;
   border: 1px solid #dfdfdf;
@@ -23,5 +23,9 @@ export const StyledSearch = styled.div`
     align-items: center;
     color: #dfdfdf;
     font-size: 1.1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
   }
 `;
