@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Grid } from "./components/Grid";
 import { ContentTable } from "./layouts/ContentTable/ContentTable";
 
+const TITLE_BAR_TEXT = "Funcionários";
+
 function App() {
   const [searchValue, setSearchValue] = useState("");
 
@@ -15,7 +17,7 @@ function App() {
     <Grid>
       <Header />
       <TitleBar
-        title="Funcionários"
+        title={TITLE_BAR_TEXT}
         searchValue={searchValue}
         setSearchValue={handleSearchChange}
       />
