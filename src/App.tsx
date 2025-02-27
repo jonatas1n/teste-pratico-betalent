@@ -1,8 +1,6 @@
-import { Header } from "./components/Header";
-import { Container } from "./components/Container";
+import { Header } from "./layouts/Header";
 import { TitleBar } from "./layouts/TitleBar/TitleBar";
 import { useState } from "react";
-import { Logo } from "./components/Logo";
 import { Grid } from "./components/Grid";
 import { ContentTable } from "./layouts/ContentTable/ContentTable";
 
@@ -15,11 +13,7 @@ function App() {
 
   return (
     <Grid>
-      <Header>
-        <Container>
-          <Logo />
-        </Container>
-      </Header>
+      <Header />
       <TitleBar
         title="Funcionários"
         searchValue={searchValue}
