@@ -5,6 +5,10 @@ import { Grid } from "./components/Grid";
 function App() {
   const [searchValue, setSearchValue] = useState("");
 
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(event.target?.value);
+  };
+
   return (
     <Grid>
       <Header>
