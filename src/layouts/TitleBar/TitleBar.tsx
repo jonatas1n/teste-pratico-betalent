@@ -10,7 +10,11 @@ type TitleBarProps = {
 export const TitleBar = ({ title }: TitleBarProps) => {
   return (
     <Container>
-      <StyledTitleBar>
+      <StyledTitleBar
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.75 }}
+      >
         <Heading value={title} />
         <Search />
       </StyledTitleBar>
