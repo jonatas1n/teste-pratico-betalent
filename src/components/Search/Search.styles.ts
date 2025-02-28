@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledSearch = styled.div`
   display: grid;
+  gap: .5rem;
   grid-template-columns: 1fr auto;
   align-items: center;
   justify-content: space-between;

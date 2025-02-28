@@ -1,9 +1,9 @@
-import { IoIosSearch } from "react-icons/io";
 import { StyledSearch } from "./Search.styles";
 import { useState, useEffect } from "react";
 import { useDebounce } from "react-use";
 import { useNavigate } from "react-router-dom";
 import { toSearchString } from "../../utils";
+import { SearchButton } from "./SearchButton";
 
 export const Search = () => {
   const navigate = useNavigate();
@@ -11,6 +11,8 @@ export const Search = () => {
   const [debouncedTerm, setDebouncedTerm] = useState(searchTerm);
 
   useDebounce(() => setDebouncedTerm(searchTerm), 300, [searchTerm]);
+
+  const clearInput = () => setSearchTerm("");
 
   useEffect(() => {
     const newSearch = toSearchString({ term: debouncedTerm });
@@ -28,9 +30,7 @@ export const Search = () => {
         value={searchTerm}
         placeholder="Pesquisar"
       />
-      <div className="icon">
-        <IoIosSearch />
-      </div>
+      <SearchButton show={searchTerm.length > 0} onClick={clearInput} />
     </StyledSearch>
   );
 };
