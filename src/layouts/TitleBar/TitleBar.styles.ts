@@ -6,7 +6,7 @@ export const StyledTitleBar = styled.div`
   align-items: center;
   padding-block: .5rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
     text-align: left;
     gap: 2rem;
     flex-direction: column;
