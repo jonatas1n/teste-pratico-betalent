@@ -5,20 +5,14 @@ import { Container } from "../../components/Container";
 
 type TitleBarProps = {
   title: string;
-  searchValue: string;
-  setSearchValue: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-export const TitleBar = ({
-  title,
-  searchValue,
-  setSearchValue,
-}: TitleBarProps) => {
+export const TitleBar = ({ title }: TitleBarProps) => {
   return (
     <Container>
       <StyledTitleBar>
         <Heading value={title} />
-        <Search value={searchValue} onChange={setSearchValue} />
+        <Search />
       </StyledTitleBar>
     </Container>
   );
