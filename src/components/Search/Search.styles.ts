@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import * as motion from "motion/react-client";
 
-export const StyledSearch = styled.div`
+export const StyledSearch = styled(motion.div)`
   display: grid;
-  gap: .5rem;
+  gap: 0.5rem;
   grid-template-columns: 1fr auto;
   align-items: center;
   justify-content: space-between;
