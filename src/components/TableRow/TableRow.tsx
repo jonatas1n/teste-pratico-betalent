@@ -2,7 +2,7 @@ import { Employee } from "../../types/employee";
 import { Avatar } from "../Avatar/Avatar";
 import { StyledTableRow } from "./TableRow.styles";
 import { formatDate, formatPhone } from "../../utils";
-import { useToggle } from "usehooks-ts";
+import { useToggle } from "react-use";
 import { FaChevronDown } from "react-icons/fa6";
 
 type TableRowProps = {
