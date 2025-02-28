@@ -4,19 +4,25 @@ import { StyledTableRow } from "./TableRow.styles";
 import { formatDate, formatPhone } from "../../utils";
 import { useToggle } from "react-use";
 import { FaChevronDown } from "react-icons/fa6";
+import * as motion from "motion/react-client";
 
 type TableRowProps = {
   data: Employee;
+  index: number;
 };
 
-export const TableRow = ({ data }: TableRowProps) => {
+export const TableRow = ({ data, index }: TableRowProps) => {
   const [isOpen, toggleIsOpen] = useToggle(false);
   const formattedAdmissionDate = formatDate(data.admissionDate);
   const formattedPhone = formatPhone(data.phone);
 
   return (
     <StyledTableRow onClick={toggleIsOpen}>
-      <tr>
+      <motion.tr
+        initial={{ opacity: 0, translateY: -16 }}
+        animate={{ opacity: 1, translateY: 0 }}
+        transition={{ delay: 0.0625 * index }}
+      >
         <td>
           <Avatar src={data.image} />
         </td>
@@ -27,7 +33,7 @@ export const TableRow = ({ data }: TableRowProps) => {
         <td className="expand-icon">
           <FaChevronDown />
         </td>
-      </tr>
+      </motion.tr>
       {isOpen && (
         <tr className="expand-area">
           <td colSpan={3}>

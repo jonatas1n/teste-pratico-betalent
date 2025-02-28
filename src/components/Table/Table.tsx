@@ -25,8 +25,8 @@ export const Table = ({ headers, data }: TableProps) => {
         </tr>
       </thead>
       <tbody>
-        {data.map((row) => (
-          <TableRow data={row} key={row.id} />
+        {data.map((row, index) => (
+          <TableRow data={row} index={index} />
         ))}
       </tbody>
     </StyledTable>
