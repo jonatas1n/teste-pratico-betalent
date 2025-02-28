@@ -24,7 +24,11 @@ export const Search = () => {
   };
 
   return (
-    <StyledSearch initial={{ width: 0 }} animate={{ width: "unset" }}>
+    <StyledSearch
+      initial={{ translateX: -32 }}
+      animate={{ translateX: 0 }}
+      transition={{ duration: 1 }}
+    >
       <input
         onChange={handleSearchChange}
         value={searchTerm}
