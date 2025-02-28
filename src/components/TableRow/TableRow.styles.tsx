@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import * as motion from "motion/react-client";
 
-export const StyledTableRow = styled(motion.div)`
+export const StyledTableRow = styled.div`
   display: contents;
   tr {
     border-bottom: 1px solid ${({ theme }) => theme.colors.gray["10"]};
