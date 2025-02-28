@@ -26,7 +26,7 @@ export const StyledTable = styled.table`
     width: 4rem;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
     .other-header {
       display: none;
     }

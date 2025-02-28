@@ -5,14 +5,14 @@ export const StyledSearch = styled.div`
   grid-template-columns: 1fr auto;
   align-items: center;
   justify-content: space-between;
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
   background-color: white;
   border: 1px solid #dfdfdf;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   color: #9e9e9e;
 
   input {
-    padding: .5rem;
+    padding: 0.5rem;
     border: none;
     width: 100%;
     font-family: Helvetica, sans-serif;
@@ -25,7 +25,7 @@ export const StyledSearch = styled.div`
     font-size: 1.1rem;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
     width: 100%;
   }
 `;

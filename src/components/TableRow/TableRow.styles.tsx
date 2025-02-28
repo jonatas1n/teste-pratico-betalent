@@ -45,7 +45,9 @@ export const StyledTableRow = styled.div`
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
+    cursor: pointer;
+
     .expand-area {
       display: table-row;
     }
