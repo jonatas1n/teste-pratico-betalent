@@ -2,11 +2,10 @@ import { Container } from "../../components/Container";
 import { Table } from "../../components/Table/Table";
 import { Spinner } from "../../components/Spinner";
 import useSWR from "swr";
-import { transformEmployeeType } from "./utils";
+import { searchFilter, transformEmployeeType } from "./utils";
 import { FetchError } from "../../components/FetchError";
 import { EmployeeResponse } from "../../types";
 import { useQueryParams } from "../../utils";
-import { Heading } from "../../components/Heading";
 
 const fetcher = async (url: string): Promise<EmployeeResponse[]> => {
   const res = await fetch(url);
@@ -23,12 +22,7 @@ export const ContentTable = () => {
 
   const searchTerm = query.get("term") ?? null;
   const filteredData = searchTerm
-    ? employeesData.filter(
-        (row) =>
-          row.name.includes(searchTerm) ||
-          row.job.includes(searchTerm) ||
-          row.phone.includes(searchTerm)
-      )
+    ? searchFilter(employeesData, searchTerm)
     : employeesData;
 
   if (isLoading) return <Spinner />;
