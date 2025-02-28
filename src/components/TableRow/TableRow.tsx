@@ -1,10 +1,9 @@
 import { Employee } from "../../types/employee";
 import { Avatar } from "../Avatar/Avatar";
-import { StyledTableRow } from "./TableRow.styles";
+import { StyledTableRow, StyledTableRowExpanded } from "./TableRow.styles";
 import { formatDate, formatPhone } from "../../utils";
 import { useToggle } from "react-use";
 import { FaChevronDown } from "react-icons/fa6";
-import * as motion from "motion/react-client";
 
 type TableRowProps = {
   data: Employee;
@@ -17,8 +16,9 @@ export const TableRow = ({ data, index }: TableRowProps) => {
   const formattedPhone = formatPhone(data.phone);
 
   return (
-    <StyledTableRow onClick={toggleIsOpen}>
-      <motion.tr
+    <>
+      <StyledTableRow
+        onClick={toggleIsOpen}
         initial={{ opacity: 0, translateY: -16 }}
         animate={{ opacity: 1, translateY: 0 }}
         transition={{ delay: 0.0625 * index }}
@@ -33,27 +33,32 @@ export const TableRow = ({ data, index }: TableRowProps) => {
         <td className="expand-icon">
           <FaChevronDown />
         </td>
-      </motion.tr>
+      </StyledTableRow>
       {isOpen && (
-        <tr className="expand-area">
+        <StyledTableRowExpanded
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "100%", opacity: 1 }}
+        >
           <td colSpan={3}>
             <table>
-              <tr>
-                <th>Cargo</th>
-                <td>{data.job}</td>
-              </tr>
-              <tr>
-                <th>Data de admissão</th>
-                <td>{formattedAdmissionDate}</td>
-              </tr>
-              <tr>
-                <th>Telefone</th>
-                <td>{formattedPhone}</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <th>Cargo</th>
+                  <td>{data.job}</td>
+                </tr>
+                <tr>
+                  <th>Data de admissão</th>
+                  <td>{formattedAdmissionDate}</td>
+                </tr>
+                <tr>
+                  <th>Telefone</th>
+                  <td>{formattedPhone}</td>
+                </tr>
+              </tbody>
             </table>
           </td>
-        </tr>
+        </StyledTableRowExpanded>
       )}
-    </StyledTableRow>
+    </>
   );
 };

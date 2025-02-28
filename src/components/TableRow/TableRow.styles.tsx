@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import * as motion from "motion/react-client";
 
-export const StyledTableRow = styled.div`
-  display: contents;
+export const StyledTableRow = styled(motion.tr)`
   tr {
     border-bottom: 1px solid ${({ theme }) => theme.colors.gray["10"]};
   }
@@ -26,31 +26,8 @@ export const StyledTableRow = styled.div`
     width: 4rem;
   }
 
-  .expand-area {
-    display: none;
-    text-align: left;
-    transition: .35s;
-    background-color: ${({ theme }) => theme.colors.gray['0']};
-
-    table {
-      width: 100%;
-
-      th, td {
-        border-bottom: 1px dashed ${({ theme }) => theme.colors.gray['10']};
-      }
-
-      td {
-        text-align: right;
-      }
-    }
-  }
-
   @media screen and (max-width: 860px) {
     cursor: pointer;
-
-    .expand-area {
-      display: table-row;
-    }
 
     .other-data {
       display: none;
@@ -59,5 +36,31 @@ export const StyledTableRow = styled.div`
     .expand-icon {
       display: table-cell;
     }
+  }
+`;
+
+export const StyledTableRowExpanded = styled(motion.tr)`
+  display: none;
+  text-align: left;
+  transition: 0.35s;
+  background-color: ${({ theme }) => theme.colors.gray["0"]};
+
+  table {
+    width: 100%;
+    padding: 1rem;
+
+    th,
+    td {
+      padding: 0.5rem;
+      border-bottom: 1px dashed ${({ theme }) => theme.colors.gray["10"]};
+    }
+
+    td {
+      text-align: right;
+    }
+  }
+
+  @media screen and (max-width: 860px) {
+    display: table-row;
   }
 `;

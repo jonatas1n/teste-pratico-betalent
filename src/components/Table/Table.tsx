@@ -31,7 +31,7 @@ export const Table = ({ headers, data }: TableProps) => {
       </thead>
       <tbody>
         {data.map((row, index) => (
-          <TableRow data={row} index={index} />
+          <TableRow data={row} key={row.id} index={index} />
         ))}
       </tbody>
     </StyledTable>
