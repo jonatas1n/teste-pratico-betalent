@@ -6,7 +6,7 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 body {
-    font-family: Helvetica;
+    font-family: "Helvetica Neue";
     margin: 0;
     padding: 0;
     background-color: ${({ theme }) => theme.colors.gray["0"]};
