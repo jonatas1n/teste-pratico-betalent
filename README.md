@@ -4,7 +4,7 @@ Este repositório contém a solução para o Teste Técnico de Front-End da BeTa
 
 ## 📄 Implementação
 
-A aplicação foi desenvolvida utilizando **React.js** com **Vite** para melhor performance e agilidade no desenvolvimento. 
+A aplicação foi desenvolvida utilizando **React.js** com **Vite** para melhor performance e agilidade no desenvolvimento. Seguiu devidamente o que foi desenhado no protótipo do Figma, mas com algumas pequenas alterações para dar destaque às animações feitas, a fim de mostrar minhas habilidades com o Motion. A aplicação também utiliza o useLocation para fazer registro de histórico, mantendo elevadas, a acessibilidade e a usabilidade.
 
 ### Funcionalidades
 - Exibição de uma tabela responsiva contendo:
@@ -63,6 +63,3 @@ A aplicação estará disponível em **http://localhost:5173/**.
 ├── db.json              # API simulada com json-server
 ├── package.json         # Dependências do projeto
 ```
-
-Se precisar de ajustes, me avise! 🚀
-
