@@ -6,6 +6,7 @@ import { searchFilter, transformEmployeeType } from "./utils";
 import { FetchError } from "../../components/FetchError";
 import { EmployeeResponse } from "../../types";
 import { useQueryParams } from "../../utils";
+import { TABLE_HEADERS } from "./constants";
 
 const fetcher = async (url: string): Promise<EmployeeResponse[]> => {
   const res = await fetch(url);
@@ -17,7 +18,6 @@ export const ContentTable = () => {
   const query = useQueryParams();
   const { data, isLoading, error } = useSWR("/api/employees", fetcher);
 
-  const headers = ["Foto", "Nome", "Cargo", "Data de Admissão", "Telefone"];
   const employeesData = data ? data.map(transformEmployeeType) : [];
 
   const searchTerm = query.get("term") ?? null;
@@ -30,7 +30,7 @@ export const ContentTable = () => {
 
   return (
     <Container>
-      <Table headers={headers} data={filteredData} />
+      <Table headers={TABLE_HEADERS} data={filteredData} />
     </Container>
   );
 };
